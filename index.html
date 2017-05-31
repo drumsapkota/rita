@@ -1,0 +1,22 @@
+<html>
+  <script src="../p5.js"></script>
+  <script src="../rita-full.min.js"></script>
+  <script>
+  function setup() {
+
+    createCanvas(200,200);
+    background(50);
+    textSize(20);
+    noStroke();
+
+    var words = RiTa.tokenize("The elephant took a bite!")
+    var rs = new RiString("The dog was white"); 
+    rs.analyze();
+    console.log(rs.get(RiTa.SYLLABLES));
+    for (var i=0, j = words.length; i<j; i++) {
+        console.log(words[i]);
+        text(words[i], 50, 50 + i*20);
+    }
+  }
+  </script>
+</html>
